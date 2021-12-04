@@ -12,7 +12,7 @@ import (
 	"github.com/wailsapp/wails/v2/pkg/options/windows"
 )
 
-//go:embed frontend/src
+//go:embed frontend/public
 var assets embed.FS
 
 //go:embed build/appicon.png
@@ -36,7 +36,7 @@ func main() {
 		Frameless:         false,
 		StartHidden:       false,
 		HideWindowOnClose: false,
-		RGBA:              &options.RGBA{R: 33, G: 37, B: 43, A: 255},
+		RGBA:              &options.RGBA{R: 0, G: 0, B: 0, A: 0},
 		Assets:            assets,
 		LogLevel:          logger.DEBUG,
 		OnStartup:         app.startup,
@@ -60,6 +60,7 @@ func main() {
 				Message: "Part of the Wails projects",
 				Icon:    icon,
 			},
+			Appearance: mac.NSAppearanceNameVibrantLight,
 		},
 	})
 
