@@ -4,12 +4,12 @@ import (
 	"embed"
 	"log"
 
-	"github.com/wailsapp/wails/v2/pkg/options/mac"
-
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/logger"
 	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/wailsapp/wails/v2/pkg/options/mac"
 	"github.com/wailsapp/wails/v2/pkg/options/windows"
+	"regquery.app/api"
 )
 
 //go:embed frontend/public
@@ -20,7 +20,7 @@ var icon []byte
 
 func main() {
 	// Create an instance of the app structure
-	app := NewApp()
+	app := api.NewApp()
 
 	// Create application with options
 	err := wails.Run(&options.App{
@@ -39,9 +39,9 @@ func main() {
 		RGBA:              &options.RGBA{R: 0, G: 0, B: 0, A: 0},
 		Assets:            assets,
 		LogLevel:          logger.DEBUG,
-		OnStartup:         app.startup,
-		OnDomReady:        app.domReady,
-		OnShutdown:        app.shutdown,
+		OnStartup:         app.Startup,
+		OnDomReady:        app.DomReady,
+		OnShutdown:        app.Shutdown,
 		Bind: []interface{}{
 			app,
 		},

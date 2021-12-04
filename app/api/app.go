@@ -1,4 +1,4 @@
-package main
+package api
 
 import (
 	"context"
@@ -16,18 +16,18 @@ func NewApp() *App {
 }
 
 // startup is called at application startup
-func (b *App) startup(ctx context.Context) {
+func (b *App) Startup(ctx context.Context) {
 	// Perform your setup here
 	b.ctx = ctx
 }
 
 // domReady is called after the front-end dom has been loaded
-func (b *App) domReady(ctx context.Context) {
+func (b *App) DomReady(ctx context.Context) {
 	// Add your action here
 }
 
 // shutdown is called at application termination
-func (b *App) shutdown(ctx context.Context) {
+func (b *App) Shutdown(ctx context.Context) {
 	// Perform your teardown here
 }
 

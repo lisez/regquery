@@ -4,7 +4,7 @@
   "frontend:build": "yarn build",
   "frontend:install": "yarn install",
   "frontend:dev": "",
-  "wailsjsdir": "./frontend",
+  "wailsjsdir": "./frontend/node_modules",
   "version": "2",
   "Path": "",
   "BuildDir": "",
