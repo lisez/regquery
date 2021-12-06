@@ -1,0 +1,6 @@
+{
+  "name": "@regquery/rpc",
+  "version": "1.0.0",
+  "private": true,
+  "main": "rpc.ts"
+}

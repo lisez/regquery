@@ -43,7 +43,7 @@ func main() {
 		OnDomReady:        app.DomReady,
 		OnShutdown:        app.Shutdown,
 		Bind: []interface{}{
-			app,
+			app, api.NewCommon(app),
 		},
 		// Windows platform specific options
 		Windows: &windows.Options{
